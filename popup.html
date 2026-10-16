@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>YouTube Home Age Filter</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fff;
+        --fg: #0f0f0f;
+        --muted: #606060;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #212121;
+          --fg: #f1f1f1;
+          --muted: #aaa;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+        width: 260px;
+        font:
+          13px/1.4 system-ui,
+          sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      select {
+        width: 100%;
+        padding: 6px;
+        font: inherit;
+      }
+      p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <label for="max-age">Hide home videos older than</label>
+    <select id="max-age"></select>
+    <p>Uses YouTube's rounded dates: a video shown as "1 yr ago" can be up to 23 months old.</p>
+    <p id="status" role="status"></p>
+    <script src="dist/popup.js"></script>
+  </body>
+</html>

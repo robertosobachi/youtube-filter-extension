@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Home Age Filter (spike)",
+  "version": "0.0.1",
+  "description": "Hides home feed videos older than a chosen age.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/bridge.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "YouTube Home Age Filter",
+    "default_popup": "popup.html"
+  }
+}
